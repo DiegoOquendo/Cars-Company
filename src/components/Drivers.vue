@@ -32,14 +32,37 @@
         </tr>
       </tbody>
     </table>
+    <amplify-connect :query="listDriversQuery">
+      <template slot-scope="{ loading, data, errors }">
+        <div v-if="loading">loading</div>
+        <div v-if="errors.length > 0">Errors</div>
+        <div v-else-if="data">
+          {{ data }}
+        </div>
+      </template>
+    </amplify-connect>
   </div>
 </template>
 
 <script>
 import { Auth } from "aws-amplify";
-
+import { components } from "aws-amplify-vue";
+// Drivers Query
+const listDriversQuery = `
+  query listDrivers {
+  listDrivers {
+    items{
+      name
+      birdthday
+    }
+  }
+}
+`;
 export default {
   name: "Drivers",
+  component: {
+    ...components
+  },
   mounted() {
     Auth.currentAuthenticatedUser()
       .then(user => {
@@ -57,6 +80,11 @@ export default {
     return {
       isAdmin: false
     };
+  },
+  computed: {
+    listDriversQuery() {
+      return this.$Amplify.graphqlOperation(listDriversQuery);
+    }
   }
 };
 </script>

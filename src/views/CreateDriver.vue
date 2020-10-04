@@ -9,20 +9,29 @@
           class="form-control"
           id="driverName"
           placeholder="Juan Pablo Montoya"
+          v-model="name"
         />
       </div>
       <div class="form-group">
         <label for="driverBirdthday">Birdthday</label>
-        <input type="date" class="form-control" id="driverBirdthday" />
+        <input
+          type="date"
+          class="form-control"
+          id="driverBirdthday"
+          v-model="birdthday"
+        />
       </div>
-      <button class="btn btn-primary">Crear</button>
+      <button class="btn btn-primary" @click="e => createDriver(e)">
+        Crear
+      </button>
     </form>
     <router-link to="/panel">VOLVER</router-link>
   </div>
 </template>
 
 <script>
-import { Auth } from "aws-amplify";
+import { Auth, API } from "aws-amplify";
+import * as mutations from "../graphql/mutations";
 
 export default {
   name: "Drivers",
@@ -43,6 +52,31 @@ export default {
           this.$router.push("/");
         }
       });
+  },
+  data: function() {
+    return {
+      name: "",
+      birdthday: ""
+    };
+  },
+  methods: {
+    async createDriver(e) {
+      e.preventDefault();
+      const driverData = {
+        name: this.name,
+        birdthday: this.birdthday
+      };
+      try {
+        const newDriver = await API.graphql({
+          query: mutations.createDriver,
+          variables: { input: driverData }
+        });
+        console.log(newDriver);
+        this.$router.push("/panel");
+      } catch (error) {
+        console.log(error);
+      }
+    }
   }
 };
 </script>
