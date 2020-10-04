@@ -1,0 +1,55 @@
+{
+    "AWSTemplateFormatVersion": "2010-09-09",
+    "Parameters": {
+        "authcarscompany82b7dafa82b7dafaUserPoolId": {
+            "Type": "String",
+            "Default": "authcarscompany82b7dafa82b7dafaUserPoolId"
+        },
+        
+        "authcarscompany82b7dafa82b7dafaAppClientID": {
+            "Type": "String",
+            "Default": "authcarscompany82b7dafa82b7dafaAppClientID"
+        },
+        "authcarscompany82b7dafa82b7dafaAppClientIDWeb": {
+            "Type": "String",
+            "Default": "authcarscompany82b7dafa82b7dafaAppClientIDWeb"
+        },
+        "AuthRoleArn": {
+            "Type": "String"
+        },
+        "UnauthRoleArn": {
+            "Type": "String"
+        },
+        "env": {
+            "Type": "String"
+        }
+    },
+    "Conditions": {
+        "ShouldNotCreateEnvResources": {
+            "Fn::Equals": [
+                {
+                    "Ref": "env"
+                },
+                "NONE"
+            ]
+        }
+    },
+    "Resources": {
+    
+        "carscompanyuserpoolGroup": {
+          "Type" : "AWS::Cognito::UserPoolGroup",
+          "Properties" : {
+              "GroupName" : "carscompanyuserpool",
+              "Precedence" : 1,
+              
+              "UserPoolId" : {
+                "Ref": "authcarscompany82b7dafa82b7dafaUserPoolId"
+              } 
+            }
+        },
+        
+    
+    
+    },
+    
+}

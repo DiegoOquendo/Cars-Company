@@ -1,0 +1,41 @@
+{
+    "carsenv": {
+        "awscloudformation": {
+            "AuthRoleName": "amplify-carscompany-carsenv-161127-authRole",
+            "UnauthRoleArn": "arn:aws:iam::516387114802:role/amplify-carscompany-carsenv-161127-unauthRole",
+            "AuthRoleArn": "arn:aws:iam::516387114802:role/amplify-carscompany-carsenv-161127-authRole",
+            "Region": "us-east-1",
+            "DeploymentBucketName": "amplify-carscompany-carsenv-161127-deployment",
+            "UnauthRoleName": "amplify-carscompany-carsenv-161127-unauthRole",
+            "StackName": "amplify-carscompany-carsenv-161127",
+            "StackId": "arn:aws:cloudformation:us-east-1:516387114802:stack/amplify-carscompany-carsenv-161127/00813e40-05bd-11eb-b2ac-0e71a2c850a7",
+            "AmplifyAppId": "d1h12zmf4ax422"
+        },
+        "categories": {
+            "auth": {
+                "carscompany82b7dafa82b7dafa": {}
+            }
+        }
+    },
+    "carscomp": {
+        "awscloudformation": {
+            "AuthRoleName": "amplify-carscompany-carscomp-231942-authRole",
+            "UnauthRoleArn": "arn:aws:iam::516387114802:role/amplify-carscompany-carscomp-231942-unauthRole",
+            "AuthRoleArn": "arn:aws:iam::516387114802:role/amplify-carscompany-carscomp-231942-authRole",
+            "Region": "us-east-1",
+            "DeploymentBucketName": "amplify-carscompany-carscomp-231942-deployment",
+            "UnauthRoleName": "amplify-carscompany-carscomp-231942-unauthRole",
+            "StackName": "amplify-carscompany-carscomp-231942",
+            "StackId": "arn:aws:cloudformation:us-east-1:516387114802:stack/amplify-carscompany-carscomp-231942/d57b7bc0-05f8-11eb-935e-12a640cb526e",
+            "AmplifyAppId": "dpohhnu26px7f"
+        },
+        "categories": {
+            "auth": {
+                "carscompany82b7dafa82b7dafa": {}
+            },
+            "function": {
+                "AdminQueries58da9f92": {}
+            }
+        }
+    }
+}
