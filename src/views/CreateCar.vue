@@ -30,3 +30,24 @@
     <router-link to="/panel">VOLVER</router-link>
   </div>
 </template>
+
+<script>
+import { Auth } from "aws-amplify";
+
+export default {
+  name: "CreateCar",
+  mounted() {
+    Auth.currentAuthenticatedUser().catch(err => {
+      console.log(err);
+      if (err === "not authenticated") {
+        this.$router.push("/");
+      }
+    });
+  },
+  data: function() {
+    return {
+      isAdmin: false
+    };
+  }
+};
+</script>

@@ -7,7 +7,7 @@
       ut impedit eius rem placeat. Dignissimos laborum odio vitae molestias
       doloremque!
     </h3>
-    <button type="button" class="btn btn-dark">Dark</button>
+    <router-link to="/auth" class="btn btn-dark">Dark</router-link>
   </div>
 </template>
 

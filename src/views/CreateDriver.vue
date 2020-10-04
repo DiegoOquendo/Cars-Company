@@ -20,3 +20,29 @@
     <router-link to="/panel">VOLVER</router-link>
   </div>
 </template>
+
+<script>
+import { Auth } from "aws-amplify";
+
+export default {
+  name: "Drivers",
+  mounted() {
+    Auth.currentAuthenticatedUser()
+      .then(user => {
+        try {
+          if (user.attributes["custom:account_type"] !== "Admin") {
+            this.$router.push("/panel");
+          }
+        } catch (error) {
+          console.log(error);
+        }
+      })
+      .catch(err => {
+        console.log(err);
+        if (err === "not authenticated") {
+          this.$router.push("/");
+        }
+      });
+  }
+};
+</script>

@@ -1,7 +1,7 @@
 <template>
   <div>
     <h1>This is Driverss</h1>
-    <router-link to="/createdrivers" class="btn btn-primary"
+    <router-link to="/createdrivers" class="btn btn-primary" v-if="isAdmin"
       >Create Driver</router-link
     >
     <br />
@@ -34,3 +34,29 @@
     </table>
   </div>
 </template>
+
+<script>
+import { Auth } from "aws-amplify";
+
+export default {
+  name: "Drivers",
+  mounted() {
+    Auth.currentAuthenticatedUser()
+      .then(user => {
+        try {
+          if (user.attributes["custom:account_type"] === "Admin") {
+            this.isAdmin = true;
+          }
+        } catch (error) {
+          console.log(error);
+        }
+      })
+      .catch(err => console.log(err));
+  },
+  data: function() {
+    return {
+      isAdmin: false
+    };
+  }
+};
+</script>

@@ -63,7 +63,7 @@ export default {
       Auth.signIn(this.email, this.password)
         .then(user => {
           console.log(user);
-          this.$router.push("/");
+          this.$router.push("/panel");
         })
         .catch(err => console.log(err));
     },

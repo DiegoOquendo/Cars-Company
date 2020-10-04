@@ -1,6 +1,5 @@
 <template>
   <div id="home">
-    <Navbar />
     <!-- Wallpaper -->
     <img alt="Vue logo" src="../assets/logo.png" />
     <!-- C0ntent -->
@@ -11,13 +10,11 @@
 <script>
 import "../assets/style/Home.css";
 import HomeContent from "@/components/HomeContent.vue";
-import Navbar from "@/components/Navbar.vue";
 
 export default {
   name: "Home",
   components: {
-    HomeContent,
-    Navbar
+    HomeContent
   }
 };
 </script>

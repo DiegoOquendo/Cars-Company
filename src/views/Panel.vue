@@ -24,6 +24,7 @@
 </template>
 
 <script>
+import { Auth } from "aws-amplify";
 import "../assets/style/Panel.css";
 import Navbar from "@/components/Navbar.vue";
 import Cars from "@/components/Cars.vue";
@@ -42,6 +43,14 @@ export default {
       isCars: false,
       currentTabComponent: "Drivers"
     };
+  },
+  mounted() {
+    Auth.currentAuthenticatedUser().catch(err => {
+      console.log(err);
+      if (err === "not authenticated") {
+        this.$router.push("/");
+      }
+    });
   },
   methods: {
     changeTab(actualTab) {
