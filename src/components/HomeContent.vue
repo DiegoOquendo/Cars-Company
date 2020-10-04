@@ -1,6 +1,6 @@
 <template>
   <div id="home-content">
-    <h1>This is a cars Company WUu</h1>
+    <h1>This is a cars Company Done</h1>
     <h3>
       Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic voluptatum
       nostrum animi, excepturi quaerat exercitationem amet omnis, quos pariatur
