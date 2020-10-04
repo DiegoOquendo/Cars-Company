@@ -13,9 +13,12 @@
       </div>
       <div class="form-group">
         <label for="carPlate">Car Plate</label>
-        <select class="form-control" id="carPlate">
-          <option>ABC123</option>
-        </select>
+        <input
+          type="text"
+          class="form-control"
+          id="carPlate"
+          placeholder="ABC123"
+        />
       </div>
       <div class="form-group">
         <label for="carModel">Car Model</label>

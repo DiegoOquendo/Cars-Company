@@ -1,9 +1,7 @@
 <template>
   <div id="Navbar">
     <b-navbar toggleable="lg" type="dark" variant="info">
-      <router-link to="/" class="navbar-brand">Cars Company</router-link>
-      <router-link to="/panel" class="navbar-brand">Panel</router-link>
-      <router-link to="/auth" class="navbar-brand">Auth</router-link>
+      <router-link to="/panel" class="navbar-brand">Cars Company</router-link>
       <b-navbar-toggle target="nav-collapse"></b-navbar-toggle>
       <b-collapse id="nav-collapse" is-nav>
         <b-navbar-nav class="ml-auto">

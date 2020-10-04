@@ -1,0 +1,11 @@
+type Driver @model {
+  id: ID!
+  name: String!
+  birdthday: String
+}
+type Car @model {
+  id: ID!
+  name: String!
+  car_plate: String
+  car_model: String
+}

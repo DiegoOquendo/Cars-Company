@@ -1,0 +1,11 @@
+{
+    "AppSyncApiName": "carscompanyapi",
+    "DynamoDBBillingMode": "PAY_PER_REQUEST",
+    "DynamoDBEnableServerSideEncryption": false,
+    "AuthCognitoUserPoolId": {
+        "Fn::GetAtt": [
+            "authcarscompany82b7dafa82b7dafa",
+            "Outputs.UserPoolId"
+        ]
+    }
+}
